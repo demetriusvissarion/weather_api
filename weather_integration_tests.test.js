@@ -10,19 +10,11 @@ describe('Integration tests for the Weather class', () => {
         const client = new WeatherClient();
         const weather = new Weather(client);
         
-        weather.load('Bristol');
-        const weatherData = await weather.getWeatherData();
-        expect(weatherData.main.temp).toEqual(-5.18);
+        await weather.load('Bristol');
+        const weatherData = weather.getWeatherData();
+        expect(weatherData.name).toEqual('Bristol');
     });
 });
-
-// const doubleCandy2 = {
-//     name : 'Skittle',
-//     price : 3.99,
-//     getName: () => { return doubleCandy2.name },
-//     getPrice: () => { return doubleCandy2.price },
-// }
-// basket.addItem(doubleCandy2);
 
 
 // You'll now if it works if (in order of important to less important):

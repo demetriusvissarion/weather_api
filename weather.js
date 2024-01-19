@@ -1,17 +1,17 @@
-// const WeatherClient = require('./weatherClient');
+const WeatherClient = require('./weatherClient');
 
 class Weather {
     constructor(client) {
         this.client = client
-        this.weatherData
+        this.weatherData = null;
     }
     
-    load(city) {
-        this.weatherData = this.client.fetchWeatherData(city)
+    async load(city) {
+        this.weatherData = await this.client.fetchWeatherData(city)
     }
 
     getWeatherData() {
-        console.log(this.weatherData)
+        // console.log(this.weatherData)
         return this.weatherData
     }
 }
@@ -22,9 +22,13 @@ module.exports = Weather;
 ////// Challenge 2.
 // in node REPL
 
-// const client = new WeatherClient();
-// const weather = new Weather(client);
+// async function main() {
+//     const client = new WeatherClient();
+//     const weather = new Weather(client);
+//     await weather.load('Bristol');
+//     const weatherData = weather.getWeatherData();
+//     console.log('weatherData:', weatherData);
+// }
+// main();
 
-// weather.load('Bristol');
-// // then, after some time
-// weather.getWeatherData();
+// node weather.js

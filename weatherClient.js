@@ -26,13 +26,3 @@ module.exports = WeatherClient;
 // });
 
 // node weatherClient.js
-
-////// Challenge 2.
-// in node REPL
-
-// const client = new WeatherClient();
-// const weather = new Weather(client);
-
-// weather.load('Bristol');
-// // then, after some time
-// weather.getWeatherData();
